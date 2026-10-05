@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Para Ana 🖤🦇</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: "Georgia", serif;
+      background:
+        radial-gradient(circle at 50% 20%, #35104d 0%, #160b20 35%, #08060d 75%);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Lua */
+    .lua {
+      position: absolute;
+      top: 50px;
+      right: 12%;
+      width: 100px;
+      height: 100px;
+      background: #f5e8ff;
+      border-radius: 50%;
+      box-shadow:
+        0 0 20px #dca8ff,
+        0 0 50px rgba(190, 100, 255, 0.5);
+    }
+
+    .lua::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #160b20;
+      border-radius: 50%;
+      left: 25px;
+      top: -10px;
+    }
+
+    /* Estrelas */
+    .estrela {
+      position: absolute;
+      color: #dca8ff;
+      font-size: 12px;
+      animation: piscar 2s infinite alternate;
+    }
+
+    @keyframes piscar {
+      from {
+        opacity: 0.3;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Morcegos */
+    .morcego {
+      position: absolute;
+      font-size: 35px;
+      animation: voar linear infinite;
+      filter: drop-shadow(0 0 5px #8f39b5);
+    }
+
+    .morcego:nth-child(1) {
+      top: 15%;
+      left: -10%;
+      animation-duration: 13s;
+    }
+
+    .morcego:nth-child(2) {
+      top: 30%;
+      left: -15%;
+      font-size: 25px;
+      animation-duration: 17s;
+      animation-delay: 3s;
+    }
+
+    .morcego:nth-child(3) {
+      top: 65%;
+      left: -10%;
+      font-size: 30px;
+      animation-duration: 15s;
+      animation-delay: 5s;
+    }
+
+    .morcego:nth-child(4) {
+      top: 80%;
+      left: -15%;
+      font-size: 22px;
+      animation-duration: 19s;
+      animation-delay: 1s;
+    }
+
+    @keyframes voar {
+      0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+      }
+
+      25% {
+        transform: translateX(30vw) translateY(-40px) rotate(-5deg);
+      }
+
+      50% {
+        transform: translateX(60vw) translateY(30px) rotate(5deg);
+      }
+
+      75% {
+        transform: translateX(90vw) translateY(-30px) rotate(-5deg);
+      }
+
+      100% {
+        transform: translateX(120vw) translateY(0) rotate(0deg);
+      }
+    }
+
+    /* Cartão */
+    .card {
+      width: 90%;
+      max-width: 520px;
+      padding: 45px 30px;
+      text-align: center;
+
+      background: rgba(15, 8, 22, 0.88);
+      border: 1px solid #8f39b5;
+      border-radius: 25px;
+
+      box-shadow:
+        0 0 20px rgba(143, 57, 181, 0.5),
+        inset 0 0 30px rgba(143, 57, 181, 0.08);
+
+      backdrop-filter: blur(8px);
+      position: relative;
+      z-index: 5;
+    }
+
+    .coracao {
+      color: #c77dff;
+      font-size: 35px;
+      animation: pulsar 1.5s infinite;
+    }
+
+    @keyframes pulsar {
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 42px;
+      color: #e8c7ff;
+      text-shadow: 0 0 12px #a94bd0;
+    }
+
+    .subtitulo {
+      color: #c9b3d8;
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    #frase {
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 20px;
+      line-height: 1.5;
+      color: #fff;
+
+      padding: 15px;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Botão */
+    button {
+      margin-top: 20px;
+      padding: 15px 30px;
+
+      border: 1px solid #c77dff;
+      border-radius: 50px;
+
+      background: linear-gradient(135deg, #6a1b85, #321044);
+      color: white;
+
+      font-size: 17px;
+      font-family: Georgia, serif;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 0 15px rgba(199, 125, 255, 0.4);
+
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      box-shadow:
+        0 0 25px rgba(199, 125, 255, 0.8);
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    .assinatura {
+      margin-top: 25px;
+      color: #9f82ae;
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    /* Pequenos corações */
+    .coracaozinho {
+      position: absolute;
+      color: #b45cff;
+      font-size: 18px;
+      animation: subir 5s linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes subir {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-120px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Lua -->
+  <div class="lua"></div>
+
+  <!-- Estrelas -->
+  <span class="estrela" style="top:12%; left:15%;">✦</span>
+  <span class="estrela" style="top:25%; left:75%;">✧</span>
+  <span class="estrela" style="top:70%; left:12%;">✦</span>
+  <span class="estrela" style="top:80%; left:85%;">✧</span>
+  <span class="estrela" style="top:45%; left:90%;">✦</span>
+
+  <!-- Morcegos -->
+  <div class="morcego">🦇</div>
+  <div class="morcego">🦇</div>
+  <div class="morcego">🦇</div>
+  <div class="morcego">🦇</div>
+
+  <!-- Cartão -->
+  <div class="card">
+
+    <div class="coracao">🖤</div>
+
+    <h1>Para Ana</h1>
+
+    <p class="subtitulo">
+      Uma pequena lembrança para uma grande amizade 🦇✨
+    </p>
+
+    <div id="frase">
+      Clique no botão... tem uma mensagem esperando por você. 🖤
+    </div>
+
+    <button onclick="novaFrase()">
+      🦇 Aperte aqui 🦇
+    </button>
+
+    <div class="assinatura">
+      Com carinho, de alguém que é grato por ter sua amizade. 🖤
+    </div>
+
+  </div>
+
+  <script>
+
+    const frases = [
+
+      "Ana, nunca se esqueça: você é muito mais forte do que imagina. 🖤",
+
+      "Mesmo nos dias difíceis, continue. Às vezes a luz demora, mas ela sempre encontra um caminho. 🌙",
+
+      "Sua amizade é uma daquelas pequenas coisas que tornam a vida muito mais bonita. 🦇🖤",
+
+      "Obrigado por existir e por fazer parte da minha vida. Sou realmente grato pela sua amizade. 🖤",
+
+      "Você não precisa ter tudo resolvido hoje. Apenas continue dando um passo de cada vez. ✨",
+
+      "Que nunca faltem motivos para você sorrir, sonhos para perseguir e forças para continuar. 🌙",
+
+      "Ana, você merece coisas incríveis. Nunca aceite que alguém faça você acreditar no contrário. 🖤",
+
+      "Algumas pessoas aparecem na nossa vida por acaso... e acabam se tornando especiais. Obrigado pela amizade. 🦇",
+
+      "Quando tudo parecer pesado, lembre-se: você já venceu dias que achou que não conseguiria enfrentar. 💜",
+
+      "Não deixe um dia ruim fazer você acreditar que sua vida é ruim. Amanhã pode ser completamente diferente. 🌙",
+
+      "Sua presença é especial. Talvez você nem perceba, mas sua amizade significa muito. 🖤",
+
+      "Continue sendo essa pessoa incrível que você é. O mundo precisa de mais pessoas assim. 🦇✨",
+
+      "Que a vida seja gentil com você e que seus sonhos encontrem o caminho até você. 💜",
+
+      "Obrigado pelas conversas, pelas risadas e simplesmente por estar aqui. Sua amizade é muito importante para mim. 🖤",
+
+      "E caso ninguém tenha te lembrado hoje: você é incrível. Não esqueça disso. 🌙🦇"
+
+    ];
+
+    let indice = 0;
+
+    function novaFrase() {
+
+      const elemento = document.getElementById("frase");
+
+      elemento.style.opacity = "0";
+
+      setTimeout(() => {
+
+        elemento.innerText = frases[indice];
+
+        elemento.style.opacity = "1";
+
+        indice++;
+
+        if (indice >= frases.length) {
+          indice = 0;
+        }
+
+      }, 300);
+
+      criarCoracao();
+
+    }
+
+    function criarCoracao() {
+
+      const coracao = document.createElement("div");
+
+      coracao.className = "coracaozinho";
+      coracao.innerText = "🖤";
+
+      coracao.style.left =
+        (45 + Math.random() * 10) + "%";
+
+      coracao.style.bottom = "25%";
+
+      coracao.style.animationDuration =
+        (3 + Math.random() * 3) + "s";
+
+      document.body.appendChild(coracao);
+
+      setTimeout(() => {
+        coracao.remove();
+      }, 6000);
+    }
+
+  </script>
+
+</body>
+</html>
